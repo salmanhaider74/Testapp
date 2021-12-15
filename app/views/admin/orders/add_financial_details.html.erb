@@ -1,0 +1,43 @@
+<%= semantic_form_for 'order', builder: ActiveAdmin::FormBuilder do |a| %>
+	<%= a.inputs "Financial Details" do %>
+    <%= a.inputs for: :financial_details do |k| %>
+      <%= k.input :annual_revenue, as: :number, input_html: { value: resource.financial_details['annual_revenue'] ? resource.financial_details['annual_revenue'] : 0.0 } %>
+      <%= k.input :annual_net_operating_income, as: :number, input_html: { value: resource.financial_details['annual_net_operating_income'] ? resource.financial_details['annual_net_operating_income'] : 0.0 } %>
+    <% end %> 
+
+  <table style='padding-left:10px;'>
+    <tr>
+      <th><li></li></th>
+      <th><li>Cash Balance</li></th>
+      <th><li>Debt Service</li></th>
+    </tr>
+    <%= a.inputs for: :financial_details do |k| %>
+      <%= k.inputs for: :month1 do |t| %>
+        <tr>
+          <th>First Month</th>
+          <td><%=  t.input :cash_balance, as: :number, label: false, input_html: { value: resource.financial_details['month1'] && resource.financial_details['month1']['cash_balance'] ? resource.financial_details['month1']['cash_balance'] : 0.0 } %></td>
+          <td><%= t.input :debt_service, as: :number, label: false, input_html: { value: resource.financial_details['month1'] && resource.financial_details['month1']['debt_service'] ? resource.financial_details['month1']['debt_service'] : 0.0 }  %></td>
+        </tr> 
+      <% end %> 
+      <%= k.inputs for: :month2 do |t| %>
+        <tr>
+          <th>Second Month</th>
+          <td><%=  t.input :cash_balance, as: :number, label: false, input_html: { value: resource.financial_details['month2'] && resource.financial_details['month2']['cash_balance'] ? resource.financial_details['month2']['cash_balance'] : 0.0 } %></td>
+          <td><%= t.input :debt_service, as: :number, label: false, input_html: { value: resource.financial_details['month2'] && resource.financial_details['month2']['debt_service'] ? resource.financial_details['month2']['debt_service'] : 0.0 }  %></td>
+        </tr> 
+      <% end %> 
+      <%= k.inputs for: :month3 do |t| %>
+        <tr>
+          <th>Third Month</th>
+          <td><%=  t.input :cash_balance, as: :number, label: false, input_html: { value: resource.financial_details['month3'] && resource.financial_details['month3']['cash_balance'] ? resource.financial_details['month3']['cash_balance'] : 0.0 } %></td>
+          <td><%= t.input :debt_service, as: :number, label: false, input_html: { value: resource.financial_details['month3'] && resource.financial_details['month3']['debt_service'] ? resource.financial_details['month3']['debt_service'] : 0.0 }  %></td>
+        </tr> 
+      <% end %> 
+    <% end %> 
+  </table>
+      
+  <%= a.actions do %>
+    <%= a.action :submit, label: "Add Financial Details", wrapper_html: { style: 'padding-left:10px;'} %>
+   <% end %>
+  <%end%>
+ <% end %>

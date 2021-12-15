@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= wicked_pdf_stylesheet_link_tag "tailwind.css" -%>
+</head>
+
+
+<body class="w-max">
+  
+  <img class="my-4 mr-2 inline-block" src="<%= vendor.logo_url %>" alt="Vendor Logo" height="50">
+    
+  <h5 class="text-4xl text-center">
+    Installment Payment Agreement
+  </h5>
+
+  <br>
+  
+  <div class="flex mt-4 mb-8">
+    <div class="customer-details flex-1">
+      <h6 class="font-bold text-xl">Customer</h6>
+      <div class="text-sm mt-2">
+        <p><%= contact.full_name %></p>
+        <p><%= customer.name %></p>
+        <p><%= customer.street %></p>
+        <p><%= customer.city %>, <%= customer.state %>, <%= customer.zip %>, <%= customer.country %></p>
+      </div>
+    </div>
+      
+    <div class="vendor-details flex-1">
+      <h6 class="font-bold text-xl">Vendor</h6>
+      <div class="text-sm mt-2">
+        <p><%= vendor.name %></p>
+        <p><%= vendor.street %></p>
+        <p><%= vendor.name %></p>
+        <p><%= vendor.city %>, <%= vendor.state %>, <%= vendor.zip %>, <%= vendor.country %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex mb-8">
+    <div class="payement-method flex-1">
+      <h6 class="font-bold text-xl">Payment Method (<%= default_payment_method.payment_mode.upcase %>)</h6>
+      <div class="text-sm mt-2">
+          <% if default_payment_method.payment_mode.upcase == 'ACH' %>
+            <p><%= default_payment_method.account_type.try(:capitalize) %> - <%= default_payment_method.account_number %></p>
+          <% end %>
+          <% if default_payment_method.payment_mode.upcase == 'INVOICE' %>
+            <p><%= default_payment_method.contact_name %></p>
+            <p><%= default_payment_method.default_address.street %></p>
+            <p><%= default_payment_method.default_address.city %>, <%= default_payment_method.default_address.state %>, <%= default_payment_method.default_address.zip %>, <%= default_payment_method.default_address.country %></p>
+            <p><%= default_payment_method.email %></p>
+            <p><%= default_payment_method.phone %></p>
+          <% end %>
+      </div>
+    </div>
+
+    <div class="service-period flex-1">
+      <h6 class="font-bold text-xl">Service Period</h6>
+      <div class="text-sm mt-2">
+        <p><%= start_date %> - <%= end_date %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="payement-terms flex-1">
+      <h6 class="font-bold text-xl">Payment Terms</h6>
+      <div class="text-sm mt-2">
+        <p><%= order.billing_frequency.try(:capitalize) %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-details my-8">
+    <h6 class="font-bold text-xl">Order details</h6>
+    <table class="table-auto border border-black text-center mt-2 w-full">
+      <thead>
+        <tr>
+          <th class="p-2 border border-black">Item Name</th>
+          <th class="p-2 border border-black">Qty</th>
+          <th class="p-2 border border-black">Price</th>
+          <th class="p-2 border border-black">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% order_items.each do |order_item| %>
+          <tr>
+            <td class="p-2 border border-black"><%= order_item.description %></td>
+            <td class="p-2 border border-black"><%= order_item.quantity %></td>
+            <td class="p-2 border border-black"><%= order_item.unit_price.format %></td>
+            <td class="p-2 border border-black"><%= order_item.formatted_amount %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <td colspan="3" class="p-2 border border-black text-right font-bold">Total</td>
+          <td class="p-2 border border-black"><%= order.payment.format %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="terms-and-conditions flex flex-col my-8">
+    <h6 class="font-bold text-xl">Terms & Conditions</h6>
+    <ul style="list-style-type: decimal;" class="list-inside text-sm mt-2">
+      <div class="pl-5">
+        <li>Vartana, Inc. the Lessor is leasing equipment and software to the Customer or Lessee.</li>
+        <li>At all times, the title of the above-mentioned equipment and software shall remain with the lessor.</li>
+        <li>The Lessee should always maintain the equipment and keep it in good condition.</li>
+        <li>People identified below are offering personal guarantees in case the company defaults on its obligations.</li>
+        <li>The lease is non-cancellable, non-transferable, and non-refundable.</li>
+      </div>
+    </ul>
+  </div>
+
+  <div class="customer-acceptance my-8">
+    <h6 class="font-bold text-xl">Customer Acceptance</h6>
+    <div class="text-sm mt-2">
+      <p>I hereby agree to the terms and conditions of this contract and have the authority to make financial decisions on behalf of the company.</p>
+    </div>
+    <table class="table-auto text-center mt-2 w-full">
+      <thead>
+        <tr>
+          <th class="p-2 border-black border-b-2">[sig|req|signer1]</th>
+          <th class="p-2 border-black border-b-2"><%= contact.role.try(:capitalize) %></th>
+          <th class="p-2 border-black border-b-2"><%= contact.full_name %></th>
+          <th class="p-2 border-black border-b-2"><%= Time.now.strftime("%m-%d-%Y") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-2">Signature</td>
+          <td class="p-2">Title</td>
+          <td class="p-2">Print Name</td>
+          <td class="p-2">Date</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div></div>
+
+  <% if personal_guarantees.present? %>
+    <div class="personal-guarantee my-8">
+      <h6 class="font-bold text-xl">Personal Guarantee</h6>
+      <div class="text-sm mt-2">
+        <p>The undersigned hereby agree to be personally held accountable for the performance of this lease. In case the company fails to pay, we may take legal action against you.</p>
+      </div>
+      <% personal_guarantees.each.with_index(1) do |personal_guarantee, idx| %>
+
+        <h6 class="font-bold text-base mt-2">Guarantor #<%= idx %>  - <%= personal_guarantee.contact.full_name %></h6>
+        <table class="table-auto text-center mt-2 w-full">
+          <thead>
+            <tr>
+              <th class="p-2 border-black border-b-2">[sig|req|signer1]</th>
+              <th class="p-2 border-black border-b-2"><%= personal_guarantee.contact.full_name %></th>
+              <th class="p-2 border-black border-b-2"><%= Time.now.strftime("%m-%d-%Y") %></th>
+              <th class="p-2 border-black border-b-2"><%= personal_guarantee.contact.ssn %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-2">Guarantor’s Signature</td>
+              <td class="p-2">Name</td>
+              <td class="p-2">Date</td>
+              <td class="p-2">SSN</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <table class="table-auto text-center mt-8 w-full">
+          <thead>
+            <tr>
+              <th class="p-2 border-black border-b-2"><%= personal_guarantee.contact.street %></th>
+              <th class="p-2 border-black border-b-2"><%= personal_guarantee.contact.city %></th>
+              <th class="p-2 border-black border-b-2"><%= personal_guarantee.contact.state %></th>
+              <th class="p-2 border-black border-b-2"><%= personal_guarantee.contact.zip %></th>
+              <th class="p-2 border-black border-b-2"><%= personal_guarantee.contact.phone %></th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <td class="p-2">Street</td>
+              <td class="p-2">Title</td>
+              <td class="p-2">State</td>
+              <td class="p-2">Zip</td>
+              <td class="p-2">Phone Number</td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <div></div>
+
+
+</body>
+
+</html>

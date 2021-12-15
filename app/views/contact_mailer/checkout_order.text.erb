@@ -1,0 +1,7 @@
+Hi <%= @contact.full_name.titleize %>,
+Good news! Your <%= @vendor.name.titleize %> order is approved for <%= @session.order.billing_frequency %> payments.
+
+For Checkout, please visit the following URL: <%= @url %>
+
+Thank you!
+<%= @vendor.name.titleize %> Team

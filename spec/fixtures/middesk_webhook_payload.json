@@ -1,0 +1,713 @@
+{
+  "object": "event",
+  "id": "f215a707-655e-400f-84e6-fbb949f5612a",
+  "type": "business.updated",
+  "data": {
+       "object": {
+         "id":"e9bfe3cb-149b-4f9b-a6f2-4177a98eac2b",
+         "external_id":null,
+         "name":"Vartana, Inc",
+         "created_at":"2021-04-14T14:38:45.271Z",
+         "updated_at":"2021-04-14T14:39:04.230Z",
+         "status":"in_review",
+         "tags":[
+            
+         ],
+         "requester":{
+            "id":"8d8eae85-58b2-44cc-b2f2-86b1b57f6424",
+            "type":"user",
+            "name":"Kush Kella",
+            "requested_at":"2021-04-14T14:38:45.313Z"
+         },
+         "assignee_id":"8d8eae85-58b2-44cc-b2f2-86b1b57f6424",
+         "review":{
+            "object":"review",
+            "id":"05fe95bb-17e0-47ef-8451-93444bf31ce1",
+            "created_at":"2021-04-14T14:39:00.854Z",
+            "updated_at":"2021-04-14T14:39:00.854Z",
+            "completed_at":null,
+            "tasks":[
+               {
+                  "category":"address",
+                  "key":"address_verification",
+                  "label":"Office Address",
+                  "message":"Identified an address within 0.2 miles of the submitted Office Address",
+                  "name":"address",
+                  "status":"warning",
+                  "sub_label":"Approximate Match"
+               },
+               {
+                  "category":"sos",
+                  "key":"sos_unknown",
+                  "label":"SOS Filings",
+                  "message":"1 of 2 filings have no status provided",
+                  "name":"sos",
+                  "status":"warning",
+                  "sub_label":"Partially Unknown"
+               },
+               {
+                  "category":"name",
+                  "key":"name",
+                  "label":"Business Name",
+                  "message":"Match identified to the submitted Business Name",
+                  "name":"name",
+                  "status":"success",
+                  "sub_label":"Verified"
+               },
+               {
+                  "category":"address",
+                  "key":"address_deliverability",
+                  "label":"Office Address",
+                  "message":"The USPS is able to deliver mail to the submitted Office Address",
+                  "name":"address",
+                  "status":"success",
+                  "sub_label":"Deliverable"
+               },
+               {
+                  "category":"address",
+                  "key":"address_property_type",
+                  "label":"Office Address",
+                  "message":"Submitted Office Address is a Commercial property",
+                  "name":"address",
+                  "status":"success",
+                  "sub_label":"Commercial"
+               },
+               {
+                  "category":"sos",
+                  "key":"sos_match",
+                  "label":"SOS Filings",
+                  "message":"The business is Active in the state of the submitted Office Address",
+                  "name":"sos",
+                  "status":"success",
+                  "sub_label":"Submitted Active"
+               },
+               {
+                  "category":"sos",
+                  "key":"sos_active",
+                  "label":"SOS Filings",
+                  "message":"1 of 2 filings are Active",
+                  "name":"sos",
+                  "status":"success",
+                  "sub_label":"Active"
+               },
+               {
+                  "category":"watchlist",
+                  "key":"watchlist",
+                  "label":"Watchlist",
+                  "message":"No Watchlist hits were identified",
+                  "name":"watchlist",
+                  "status":"success",
+                  "sub_label":"No Hits"
+               },
+               {
+                  "category":"industry",
+                  "key":"industry",
+                  "label":"True Industry",
+                  "message":"This business likely does not operate in a high risk industry",
+                  "name":"industry",
+                  "status":"success",
+                  "sub_label":"No Hits"
+               },
+               {
+                  "category":"website",
+                  "key":"website_status",
+                  "label":"Website",
+                  "message":"Website was Online when the business record was ordered",
+                  "name":"website",
+                  "status":"success",
+                  "sub_label":"Online"
+               },
+               {
+                  "category":"website",
+                  "key":"website_verification",
+                  "label":"Website",
+                  "message":"Successfully found entity details on the submitted Website",
+                  "name":"website",
+                  "status":"success",
+                  "sub_label":"Verified"
+               }
+            ],
+            "assignee":{
+               "object":"user",
+               "id":"8d8eae85-58b2-44cc-b2f2-86b1b57f6424",
+               "name":"Kush Kella",
+               "email":"kush@vartana.co",
+               "roles":[
+                  "admin",
+                  "member"
+               ],
+               "image_url":"https://lh5.googleusercontent.com/-dw7WtOSXUQ0/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmi4-54etW42d7siDtxL1MEKQB7dA/s96-c/photo.jpg",
+               "last_login_at":"2021-04-16T00:49:19.111Z"
+            }
+         },
+         "tin":null,
+         "business_batch_id":null,
+         "formation":{
+            "entity_type":"CORPORATION",
+            "formation_date":"2020-06-23",
+            "formation_state":"DE",
+            "created_at":"2021-04-14T14:38:46.553Z",
+            "updated_at":"2021-04-14T14:38:46.553Z"
+         },
+         "website":{
+            "object":"website",
+            "id":"45d464a9-0264-4c09-818f-cb78a7319fbf",
+            "business_id":"e9bfe3cb-149b-4f9b-a6f2-4177a98eac2b",
+            "url":"https://vartana.co",
+            "status":"online",
+            "title":"Home",
+            "description":"",
+            "domain":{
+               "domain":"vartana.co",
+               "domain_id":"D558F31B2143545BEAABECE9E9CBEC744-NSR",
+               "creation_date":"2020-04-22T17:56:02.000Z",
+               "expiration_date":null,
+               "registrar":{
+                  "organization":"NameCheap, Inc.",
+                  "name":"NameCheap, Inc.",
+                  "url":"http://www.namecheap.com"
+               }
+            },
+            "pages":[
+               {
+                  "url":"https://docs.google.com/document/d/1ovZPnUlEDUhfmX6GI4GsaHvdSVtGeCkx8HdzvL0M8bQ/edit",
+                  "category":"privacy",
+                  "screenshot_url":"https://storage.googleapis.com/middesk-websites/docs.google.com/screenshots/privacy--1618411139.png"
+               },
+               {
+                  "url":"https://www.vartana.co/",
+                  "category":"home",
+                  "screenshot_url":"https://storage.googleapis.com/middesk-websites/vartana.co/screenshots/home--1618411129.png"
+               }
+            ],
+            "created_at":"2021-04-14T14:38:45.299Z",
+            "updated_at":"2021-04-14T14:38:59.862Z",
+            "business_name_match":true,
+            "parked":false,
+            "phone_numbers":[
+               
+            ],
+            "addresses":[
+               
+            ]
+         },
+         "watchlist":{
+            "object":"watchlist",
+            "id":"db3db4d8-97ec-4cd2-9255-5b9a0d864804",
+            "hit_count":0,
+            "agencies":[
+               {
+                  "abbr":"OFAC",
+                  "name":"Office of Foreign Assets Control",
+                  "org":"U.S. Department of Treasury"
+               },
+               {
+                  "abbr":"BIS",
+                  "name":"Bureau of Industry and Security",
+                  "org":"U.S. Department of Commerce"
+               },
+               {
+                  "abbr":"DDTC",
+                  "name":"Directorate of Defense Trade Controls",
+                  "org":"U.S. Department of State"
+               },
+               {
+                  "abbr":"ISN",
+                  "name":"Bureau of International Security and Non-Proliferation",
+                  "org":"U.S. Department of State"
+               }
+            ],
+            "lists":[
+               {
+                  "object":"watchlist_source",
+                  "agency":"Bureau of Industry and Security",
+                  "agency_abbr":"BIS",
+                  "organization":"U.S. Department of Commerce",
+                  "title":"Denied Persons List",
+                  "abbr":"DPL",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Directorate of Defense Trade Controls",
+                  "agency_abbr":"DDTC",
+                  "organization":"U.S. Department of State",
+                  "title":"AECA/ITAR Debarred",
+                  "abbr":"DTC",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Bureau of Industry and Security",
+                  "agency_abbr":"BIS",
+                  "organization":"U.S. Department of Commerce",
+                  "title":"Entity List",
+                  "abbr":"EL",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Office of Foreign Assets Control",
+                  "agency_abbr":"OFAC",
+                  "organization":"U.S. Department of Treasury",
+                  "title":"Specially Designated Nationals",
+                  "abbr":"SDN",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Office of Foreign Assets Control",
+                  "agency_abbr":"OFAC",
+                  "organization":"U.S. Department of Treasury",
+                  "title":"Foreign Sanctions Evaders",
+                  "abbr":"FSE",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Bureau of International Security and Non-Proliferation",
+                  "agency_abbr":"ISN",
+                  "organization":"U.S. Department of State",
+                  "title":"Nonproliferation Sanctions",
+                  "abbr":"ISN",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Office of Foreign Assets Control",
+                  "agency_abbr":"OFAC",
+                  "organization":"U.S. Department of Treasury",
+                  "title":"Palestinian Legislative Council",
+                  "abbr":"PLC",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Office of Foreign Assets Control",
+                  "agency_abbr":"OFAC",
+                  "organization":"U.S. Department of Treasury",
+                  "title":"Sectoral Sanctions Identifications",
+                  "abbr":"SSI",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Bureau of Industry and Security",
+                  "agency_abbr":"BIS",
+                  "organization":"U.S. Department of Commerce",
+                  "title":"Unverified List",
+                  "abbr":"UVL",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Office of Foreign Assets Control",
+                  "agency_abbr":"OFAC",
+                  "organization":"U.S. Department of Treasury",
+                  "title":"Capta List",
+                  "abbr":"CAP",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Bureau of Industry and Security",
+                  "agency_abbr":"BIS",
+                  "organization":"U.S. Department of Commerce",
+                  "title":"Military End User",
+                  "abbr":"MEU",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Office of Foreign Assets Control",
+                  "agency_abbr":"OFAC",
+                  "organization":"U.S. Department of Treasury",
+                  "title":"Non-SDN Menu-Based Sanctions",
+                  "abbr":"NS-MBS",
+                  "results":[
+                     
+                  ]
+               },
+               {
+                  "object":"watchlist_source",
+                  "agency":"Office of Foreign Assets Control",
+                  "agency_abbr":"OFAC",
+                  "organization":"U.S. Department of Treasury",
+                  "title":"Non-SDN Iranian Sanctions",
+                  "abbr":"NS-ISA",
+                  "results":[
+                     
+                  ]
+               }
+            ]
+         },
+         "names":[
+            {
+               "object":"name",
+               "id":"d37ca4f6-485a-43d3-9680-f78c2d8dec41",
+               "name":"Vartana, Inc",
+               "submitted":true,
+               "sources":[
+                  {
+                     "id":"45d464a9-0264-4c09-818f-cb78a7319fbf",
+                     "type":"website",
+                     "metadata":{
+                        "url":"https://vartana.co"
+                     }
+                  },
+                  {
+                     "id":"e276d84d-f466-4cd7-ba68-79e86e85ab08",
+                     "type":"registration",
+                     "metadata":{
+                        "state":"DE",
+                        "status":"unknown",
+                        "file_number":"3116745",
+                        "jurisdiction":"DOMESTIC"
+                     }
+                  },
+                  {
+                     "id":"36eb8344-bb38-42cf-9fa1-847150f74b7d",
+                     "type":"registration",
+                     "metadata":{
+                        "state":"CA",
+                        "status":"active",
+                        "file_number":"C4615245",
+                        "jurisdiction":"FOREIGN"
+                     }
+                  }
+               ]
+            }
+         ],
+         "addresses":[
+            {
+               "object":"address",
+               "address_line1":"548 Market St",
+               "address_line2":null,
+               "city":"San Francisco",
+               "state":"CA",
+               "postal_code":"94104-5401",
+               "full_address":"548 Market St, San Francisco, CA 94104-5401",
+               "submitted":true,
+               "latitude":37.7898689004803,
+               "longitude":-122.400666298495,
+               "property_type":"COMMERCIAL",
+               "deliverable":true,
+               "deliverability_analysis":null,
+               "street_view_available":true,
+               "labels":[
+                  
+               ],
+               "created_at":"2021-04-14T14:38:45.304Z",
+               "updated_at":"2021-04-14T14:38:46.153Z",
+               "registered_agent_name":null,
+               "cmra":null,
+               "sources":[
+                  
+               ]
+            },
+            {
+               "object":"address",
+               "address_line1":"16192 Coastal Hwy",
+               "address_line2":null,
+               "city":"Lewes",
+               "state":"DE",
+               "postal_code":"19958-3608",
+               "full_address":"16192 Coastal Hwy, Lewes, DE 19958-3608",
+               "submitted":false,
+               "latitude":38.76497,
+               "longitude":-75.21175,
+               "property_type":"COMMERCIAL",
+               "deliverable":true,
+               "deliverability_analysis":null,
+               "street_view_available":true,
+               "labels":[
+                  
+               ],
+               "created_at":"2021-04-14T14:38:46.634Z",
+               "updated_at":"2021-04-14T14:38:46.634Z",
+               "registered_agent_name":null,
+               "cmra":null,
+               "sources":[
+                  {
+                     "id":"e276d84d-f466-4cd7-ba68-79e86e85ab08",
+                     "type":"registration",
+                     "metadata":{
+                        "state":"DE",
+                        "status":"unknown",
+                        "file_number":"3116745",
+                        "jurisdiction":"DOMESTIC"
+                     }
+                  }
+               ]
+            },
+            {
+               "object":"address",
+               "address_line1":"3400 Stevenson Blvd Apt L21",
+               "address_line2":null,
+               "city":"Fremont",
+               "state":"CA",
+               "postal_code":"94538-5828",
+               "full_address":"3400 Stevenson Blvd Apt L21, Fremont, CA 94538-5828",
+               "submitted":false,
+               "latitude":37.5451,
+               "longitude":-121.97297,
+               "property_type":"RESIDENTIAL",
+               "deliverable":true,
+               "deliverability_analysis":null,
+               "street_view_available":true,
+               "labels":[
+                  
+               ],
+               "created_at":"2021-04-14T14:38:46.658Z",
+               "updated_at":"2021-04-14T14:38:46.658Z",
+               "registered_agent_name":null,
+               "cmra":null,
+               "sources":[
+                  {
+                     "id":"36eb8344-bb38-42cf-9fa1-847150f74b7d",
+                     "type":"registration",
+                     "metadata":{
+                        "state":"CA",
+                        "status":"active",
+                        "file_number":"C4615245",
+                        "jurisdiction":"FOREIGN"
+                     }
+                  }
+               ]
+            },
+            {
+               "object":"address",
+               "address_line1":"548 Market St PMB 59708",
+               "address_line2":null,
+               "city":"San Francisco",
+               "state":"CA",
+               "postal_code":"94104-5401",
+               "full_address":"548 Market St PMB 59708, San Francisco, CA 94104-5401",
+               "submitted":false,
+               "latitude":37.78957,
+               "longitude":-122.40119,
+               "property_type":"COMMERCIAL",
+               "deliverable":true,
+               "deliverability_analysis":null,
+               "street_view_available":true,
+               "labels":[
+                  
+               ],
+               "created_at":"2021-04-14T14:38:46.684Z",
+               "updated_at":"2021-04-14T14:38:46.684Z",
+               "registered_agent_name":null,
+               "cmra":null,
+               "sources":[
+                  {
+                     "id":"36eb8344-bb38-42cf-9fa1-847150f74b7d",
+                     "type":"registration",
+                     "metadata":{
+                        "state":"CA",
+                        "status":"active",
+                        "file_number":"C4615245",
+                        "jurisdiction":"FOREIGN"
+                     }
+                  }
+               ]
+            }
+         ],
+         "people":[
+            {
+               "object":"person",
+               "name":"KUSH KELLA",
+               "submitted":false,
+               "sources":[
+                  {
+                     "id":"36eb8344-bb38-42cf-9fa1-847150f74b7d",
+                     "type":"registration",
+                     "metadata":{
+                        "state":"CA",
+                        "status":"active",
+                        "file_number":"C4615245",
+                        "jurisdiction":"FOREIGN"
+                     }
+                  }
+               ],
+               "titles":[
+                  {
+                     "object":"person_title",
+                     "title":"REGISTERED AGENT"
+                  }
+               ]
+            },
+            {
+               "object":"person",
+               "name":"GUST DELAWARE, INC.",
+               "submitted":false,
+               "sources":[
+                  {
+                     "id":"e276d84d-f466-4cd7-ba68-79e86e85ab08",
+                     "type":"registration",
+                     "metadata":{
+                        "state":"DE",
+                        "status":"unknown",
+                        "file_number":"3116745",
+                        "jurisdiction":"DOMESTIC"
+                     }
+                  }
+               ],
+               "titles":[
+                  {
+                     "object":"person_title",
+                     "title":"REGISTERED AGENT"
+                  }
+               ]
+            }
+         ],
+         "phone_numbers":[
+            
+         ],
+         "profiles":[
+            
+         ],
+         "registrations":[
+            {
+               "object":"registration",
+               "id":"e276d84d-f466-4cd7-ba68-79e86e85ab08",
+               "business_id":"e9bfe3cb-149b-4f9b-a6f2-4177a98eac2b",
+               "name":"VARTANA, INC.",
+               "status":"unknown",
+               "jurisdiction":"DOMESTIC",
+               "entity_type":"CORPORATION",
+               "file_number":"3116745",
+               "addresses":[
+                  "16192 COASTAL HIGHWAY, LEWES, DE 19958"
+               ],
+               "officers":[
+                  
+               ],
+               "registration_date":"2020-06-23",
+               "state":"DE",
+               "source":"https://icis.corp.delaware.gov/Ecorp/EntitySearch/NameSearch.aspx"
+            },
+            {
+               "object":"registration",
+               "id":"36eb8344-bb38-42cf-9fa1-847150f74b7d",
+               "business_id":"e9bfe3cb-149b-4f9b-a6f2-4177a98eac2b",
+               "name":"VARTANA, INC.",
+               "status":"active",
+               "jurisdiction":"FOREIGN",
+               "entity_type":"CORPORATION",
+               "file_number":"C4615245",
+               "addresses":[
+                  "3400 STEVENSON BLVD L21 FREMONT CA 94538",
+                  "548 MARKET ST PMB 59708 SAN FRANCISCO CA 94104"
+               ],
+               "officers":[
+                  
+               ],
+               "registration_date":"2020-07-07",
+               "state":"CA",
+               "source":"https://businesssearch.sos.ca.gov/CBS/SearchResults?filing=False&SearchType=NUMBER&SearchCriteria=C4615245"
+            }
+         ],
+         "orders":[
+            {
+               "object":"order",
+               "id":"317261bd-88fa-4973-ab64-26ae7b5a5131",
+               "created_at":"2021-04-14T14:38:45.313Z",
+               "updated_at":"2021-04-14T14:39:01.209Z",
+               "completed_at":"2021-04-14T14:39:01.209Z",
+               "status":"completed",
+               "product":"identity"
+            }
+         ],
+         "industry_classification":{
+            "object":"industry_classification",
+            "id":"14ae878a-5be1-4c30-916f-fa939623525f",
+            "status":"completed",
+            "categories":[
+               {
+                  "name":"Manufacturing",
+                  "sector":"MANUFACTURING",
+                  "category":"MANUFACTURING",
+                  "score":0.65938985,
+                  "high_risk":false
+               },
+               {
+                  "name":"Money and Legal Services",
+                  "sector":null,
+                  "category":"MONEY_LEGAL",
+                  "score":0.29532674,
+                  "high_risk":true
+               },
+               {
+                  "name":"Real Estate, Rental and Leasing",
+                  "sector":"REAL_ESTATE_RENTAL_LEASE",
+                  "category":"REAL_ESTATE_RENTAL_LEASE",
+                  "score":0.20099899,
+                  "high_risk":false
+               },
+               {
+                  "name":"Construction",
+                  "sector":"CONSTRUCTION",
+                  "category":"CONSTRUCTION",
+                  "score":0.13489524,
+                  "high_risk":false
+               },
+               {
+                  "name":"Investment and Credit Services",
+                  "sector":null,
+                  "category":"INVESTMENT_CREDIT",
+                  "score":0.10506949,
+                  "high_risk":true
+               }
+            ],
+            "website":{
+               "url":"https://vartana.co",
+               "status":"online",
+               "parked":false
+            },
+            "created_at":"2021-04-14T14:39:00.042Z",
+            "completed_at":"2021-04-14T14:39:00.745Z"
+         },
+         "document":{
+           "object": "document",
+           "id": "1538c2f9-ff0f-489e-0099-a5f116a4af07",
+           "document_type": "Certificate of organization",
+           "filename": "3868812_Certificate_of_Organization_2009-03-16",
+           "content_type": "application/pdf",
+           "size": 82034,
+           "download_url": "https://storage.middesk.com/middesk/z6q1p5209ipr0vgof1900l1s580n",
+           "created_at": "2020-04-30T23:50:51.222Z",
+           "source": {
+             "type": "registration",
+             "id": "2b16130a-0351-49fc-9f73-4a8a1ccc95c8",
+             "metadata": {
+               "state": "PA",
+               "status": "active"
+             }
+           },
+           "filing_date": "2009-03-16T00:00:00.000Z"
+         }
+      },
+     "created_at": "2020-01-02T23:54:48.239Z"
+   }
+}

@@ -1,0 +1,7 @@
+files:
+  - /var/app/current/log/*.log
+hostname: ##DO_NOT_MODIFY-SETUP_WILL_REPLACE_THIS##
+destination:
+  host: logs6.papertrailapp.com
+  port: 53975
+  protocol: tls

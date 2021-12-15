@@ -1,0 +1,23 @@
+:verbose: false
+:concurrency: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+:timeout: 30
+
+:queues:
+  - default
+  - mailers
+  - scheduler
+  - dnb
+  - middesk
+  - experian
+  - active_storage_analysis
+  - active_storage_purge
+
+:schedule:
+  generate_invoices:
+    queue: scheduler
+    cron: '0 0 * * *'   # Runs once per day
+    class: GenerateInvoicesJob  
+  payout_vendors:
+    queue: scheduler
+    cron: '0 0 * * 0'   # Runs once per week
+    class: PayoutVendorsJob  

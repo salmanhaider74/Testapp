@@ -1,0 +1,8 @@
+
+Hi <%= @contact.full_name.titleize %>,
+Thank you for your interest in <%= @vendor.name.titleize %> product offering. Your application for <%= @session.order.billing_frequency %> payments is ready.
+
+For Checkout, please visit the following URL: <%= @url %>
+
+Thank you!
+<%= @vendor.name.titleize %> Team

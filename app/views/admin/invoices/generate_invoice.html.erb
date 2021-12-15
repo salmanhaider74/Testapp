@@ -1,0 +1,8 @@
+<%= semantic_form_for "generate_invoice", :url => send("generate_invoice_admin_#{resource.class.name.downcase}_path",resource), method: :post, validate: true, builder: ActiveAdmin::FormBuilder do |f| %>
+	<%= f.inputs do %>
+	  <%= f.input :invoice_date, as: :datepicker, input_html: { value: Date.today, required: true } %>
+	<% end %>
+	<%=f.actions do%>
+		<%= f.action :submit, label: "Generate" %>
+	<%end%>
+<% end %>

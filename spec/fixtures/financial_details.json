@@ -1,0 +1,16 @@
+{
+    "annual_revenue": 0.0,
+    "annual_net_operating_income": 0.0,
+    "month1": {
+        "cash_balance": 0.0,
+        "debt_service": 0.0
+    },
+    "month2": {
+        "cash_balance": 0.0,
+        "debt_service": 0.0
+    },
+    "month3": {
+        "cash_balance": 0.0,
+        "debt_service": 0.0
+    }
+ }

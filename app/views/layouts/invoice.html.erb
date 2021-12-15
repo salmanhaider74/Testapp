@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= wicked_pdf_stylesheet_link_tag "tailwind.css" -%>
+</head>
+
+
+<body class="w-max">
+
+  <img class="my-4 mr-2 inline-block" src="<%= vendor.logo_url %>" alt="Vendor Logo" height="50">
+
+  <h5 class="text-4xl text-center">
+    Invoice <%= invoice.number%>
+  </h5>
+
+  <br>
+  
+  <div class="flex mt-4 mb-8">
+    <div class="customer-details flex-1">
+      <h6 class="font-bold text-xl">Customer</h6>
+      <div class="text-sm mt-2">
+        <p><%= contact.full_name %></p>
+        <p><%= customer.name %></p>
+        <p><%= customer.street %></p>
+        <p><%= customer.city %>, <%= customer.state %>, <%= customer.zip %>, <%= customer.country %></p>
+      </div>
+    </div>
+
+    <div class="vendor-details flex-1">
+      <h6 class="font-bold text-xl">Vendor</h6>
+      <div class="text-sm mt-2">
+        <p><%= vendor.name %></p>
+        <p><%= vendor.street %></p>
+        <p><%= vendor.name %></p>
+        <p><%= vendor.city %>, <%= vendor.state %>, <%= vendor.zip %>, <%= vendor.country %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex mb-8">
+    <div class="payement-method flex-1">
+      <h6 class="font-bold text-xl">Payment Method (<%= default_payment_method.payment_mode.upcase %>)</h6>
+      <div class="text-sm mt-2">
+          <% if default_payment_method.payment_mode.upcase == 'ACH' %>
+            <p><%= default_payment_method.account_type.capitalize %> - <%= default_payment_method.account_number %></p>
+          <% end %>
+          <% if default_payment_method.payment_mode.upcase == 'INVOICE' %>
+            <p><%= default_payment_method.contact_name %></p>
+            <p><%= default_payment_method.default_address.street %></p>
+            <p><%= default_payment_method.default_address.city %>, <%= default_payment_method.default_address.state %>, <%= default_payment_method.default_address.zip %>, <%= default_payment_method.default_address.country %></p>
+            <p><%= default_payment_method.email %></p>
+            <p><%= default_payment_method.phone %></p>
+          <% end %>
+      </div>
+    </div>
+
+    <div class="service-period flex-1">
+      <h6 class="font-bold text-xl">Due Date</h6>
+      <div class="text-sm mt-2">
+        <p><%= invoice.due_date %></p>
+      </div>
+      <h6 class="font-bold text-xl">Status</h6>
+      <div class="text-sm mt-2">
+        <p><%= invoice.status %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-details my-8">
+    <h6 class="font-bold text-xl">Invoice details</h6>
+    <table class="table-auto border border-black text-center mt-2 w-full">
+      <thead>
+        <tr>
+          <th class="p-2 border border-black">Item Name</th>
+          <th class="p-2 border border-black">Qty</th>
+          <th class="p-2 border border-black">Price</th>
+          <th class="p-2 border border-black">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% invoice_items.each do |invoice_item| %>
+          <tr>
+            <td class="p-2 border border-black"><%= invoice_item.name %></td>
+            <td class="p-2 border border-black"><%= invoice_item.order_item.quantity %></td>
+            <td class="p-2 border border-black"><%= invoice_item.price.format %></td>
+            <td class="p-2 border border-black"><%= invoice_item.amount.format %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <td colspan="3" class="p-2 border border-black text-right font-bold">Total</td>
+          <td class="p-2 border border-black"><%= invoice.amount.format %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>
